@@ -11,16 +11,16 @@ router.get('/dashboard', function(req, res, next) {
   res.render('dashboard', { title: 'Express' });
 });
 
+/* GET create quiz page. */
+router.get('/create-quiz', function(req, res, next) {
+    // const id = req.params.id;
+    res.render('create', { title: 'Express' });
+});
+
 /* GET playlist page. */
 router.get('/playlist/:id', function(req, res, next) {
     const id = req.params.id;
     res.render('playlist', { title: 'Express' });
-});
-
-/* GET create playlist page. */
-router.get('/new', function(req, res, next) {
-    const id = req.params.id;
-    res.render('create-playlist', { title: 'Express' });
 });
 
 /* GET quiz page. */

@@ -14,6 +14,7 @@ $color0: #1c1c1c;
 
 $padding2: 20px;
 $padding1: 40px;
+$padding0a: 3em;
 $padding0: 6em;
 
 html {
@@ -56,6 +57,7 @@ h1 {
   font-size: 80px;
   color: $color6;
   margin: 0.2em 0 0.6em 0;
+  line-height: 1.4em;
 }
 
 h2 {
@@ -63,6 +65,7 @@ h2 {
   font-size: 48px;
   color: $color6;
   margin: 1em 0 1em 0;
+  line-height: 1.4em;
 }
 
 label,
@@ -71,6 +74,7 @@ h3 {
   font-size: 24px;
   color: $color6;
   margin: 1em 0 1em 0;
+  line-height: 1.4em;
 }
 
 h4 {
@@ -79,6 +83,7 @@ h4 {
   font-weight: 400;
   color: $color6;
   margin: 1em 0 1em 0;
+  line-height: 1.4em;
 }
 
 a,
@@ -89,6 +94,7 @@ h5 {
   color: $color6;
   margin: 1em 0 1em 0;
   text-decoration: none;
+  line-height: 1.4em;
 }
 
 .user-tab {
@@ -122,6 +128,23 @@ h5 {
   background-color: black;
 }
 
+.playlist-title-container {
+  display: flex;
+
+  img {
+    align-self: center;
+    margin-left: $padding2;
+    background-color: $color1;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: lighten($color1, 10%);
+      transition: background-color 0.6s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+
 .opaque {
   position: fixed;
   background-color: black;
@@ -134,6 +157,7 @@ h5 {
 }
 
 .header-container {
+  position: absolute;
   height: 96px;
   width: auto;
   display: flex;
@@ -198,17 +222,28 @@ h5 {
 
     [type="submit"] {
       margin: $padding2 0 0 0;
-      background-color: $color4;
+      background-color: $color0;
       color: $color6;
       padding: $padding2;
-      border: none;
+      border: 2px solid white;
       border-radius: 30px;
+      animation-name: create-playlist-hover;
+      animation-duration: 0.6s;
+      animation-fill-mode: forwards;
 
       &:hover {
-        background-color: darken($color4, 10%);
         cursor: pointer;
-        transform: translateY(15px);
-        transition: transform 0.6s ease-in-out;
+        background-color: darken($color4, 0%);
+        transition: background-color 0.6s ease-in-out;
+
+        @keyframes create-playlist-hover {
+          0% {
+            transform: translateY(-15px);
+          }
+          100% {
+            transform: translateY(10px);
+          }
+        }
       }
     }
   }
@@ -222,9 +257,182 @@ h5 {
   background-color: $color2;
   border-radius: 50%;
   align-self: center;
+  z-index: 10;
 
   &:hover {
     cursor: pointer;
     background-color: lighten($color2, 5%);
+  }
+}
+
+#hero-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hero-border {
+  background-color: transparent;
+  border: 2px solid $color6;
+  position: absolute;
+  height: 82vh;
+  width: 82vw;
+  margin: -41vh 0 0 -41vw;
+  top: 50%;
+  left: 50%;
+  padding: $padding0;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    color: darken($color6, 0%);
+    width: 50vw;
+    line-height: 1.5em;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    color: darken($color6, 35%);
+    margin-top: $padding1;
+  }
+
+  .logo {
+    position: absolute;
+    border-left: 2px solid $color6;
+    border-right: 2px solid $color6;
+    background-color: $color0;
+    max-width: 350px;
+    height: 90px;
+    padding: 0 $padding0a 0 $padding0a;
+    text-align: center;
+    transform: translateX(0) translateY(-8.5em);
+
+    h1 {
+      transform: translateY(-0.3em);
+    }
+  }
+}
+.buttons {
+  margin-top: $padding0a;
+}
+
+.button {
+  background-color: $color0;
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  margin: 0 1em 0 0;
+
+  a {
+    padding: 0 $padding1 0 $padding1;
+  }
+}
+
+.sign-up-btn {
+  border: 1px solid $color6;
+
+  &:hover {
+    background-color: lighten($color0, 80%);
+    transition: background-color 0.2s ease-in-out;
+    a {
+      color: black;
+    }
+  }
+}
+
+.quiz-title {
+  display: flex;
+  align-items: center;
+  //   border: 2px solid white;
+
+  .stats {
+    // border: 2px solid white;
+    margin: 0 0 0 $padding0a;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+
+    .substat {
+      margin: 0 $padding1 0 0;
+    }
+  }
+}
+
+.more-btn {
+  a {
+    color: $color5;
+  }
+}
+
+.quiz-container {
+  h5 {
+    display: inline-block;
+  }
+
+  [type="submit"] {
+    margin-top: $padding2;
+    padding: $padding2 $padding0a $padding2 $padding0a;
+    color: white;
+    background-color: $color1;
+    border: none;
+  }
+}
+
+.lost-container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  //   border: 1px solid white;
+
+  .lost {
+    height: 80vh;
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -40vh 0 0 -40vw;
+    // border: 1px solid white;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  #lost-img {
+    display: block;
+    margin: 0 auto 0 auto;
+    height: 500px;
+  }
+}
+
+form.create-quiz-form {
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  label {
+    justify-self: left;
+  }
+
+  [type="text"] {
+    display: block;
+  }
+
+  [type="submit"] {
+    border: none;
+    padding: $padding2;
+    background-color: $color0;
+    color: $color6;
+    border: 2px solid $color6;
+
+    &:hover {
+      background-color: $color6;
+      color: $color0;
+      cursor: pointer;
+    }
   }
 }

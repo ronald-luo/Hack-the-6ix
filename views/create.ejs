@@ -1,0 +1,30 @@
+<%- include('./partials/header') %>
+<%- include('./partials/user-tab') %>
+<%- include('./partials/sidebar') %>
+<%- include('./partials/back') %>
+
+<main>
+    <h1>Submit a question</h1>
+    <h4>Contribute to the pool</h4>
+
+    <form class="create-quiz-form" action="/create" method="PUT">
+        <label for="">Question</label>
+        <input type="text" name="" id="">
+        <label for="">Solution</label>
+        <input type="text" name="" id="">
+        <label for="">Option 1</label>
+        <input type="text" name="" id="">
+        <label for="">Option 2</label>
+        <input type="text" name="" id="">
+        <label for="">Option 3</label>
+        <input type="text" name="" id="">
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="question-container">
+    
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

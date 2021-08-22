@@ -46,6 +46,7 @@ h1 {
   font-size: 80px;
   color: #ffffff;
   margin: 0.2em 0 0.6em 0;
+  line-height: 1.4em;
 }
 
 h2 {
@@ -53,6 +54,7 @@ h2 {
   font-size: 48px;
   color: #ffffff;
   margin: 1em 0 1em 0;
+  line-height: 1.4em;
 }
 
 label,
@@ -61,6 +63,7 @@ h3 {
   font-size: 24px;
   color: #ffffff;
   margin: 1em 0 1em 0;
+  line-height: 1.4em;
 }
 
 h4 {
@@ -69,6 +72,7 @@ h4 {
   font-weight: 400;
   color: #ffffff;
   margin: 1em 0 1em 0;
+  line-height: 1.4em;
 }
 
 a,
@@ -79,6 +83,7 @@ h5 {
   color: #ffffff;
   margin: 1em 0 1em 0;
   text-decoration: none;
+  line-height: 1.4em;
 }
 
 .user-tab {
@@ -116,6 +121,28 @@ h5 {
   background-color: black;
 }
 
+.playlist-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.playlist-title-container img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 20px;
+  background-color: #2b2b2b;
+  border-radius: 50%;
+}
+
+.playlist-title-container img:hover {
+  background-color: #454545;
+  -webkit-transition: background-color 0.6s ease-in-out;
+  transition: background-color 0.6s ease-in-out;
+  cursor: pointer;
+}
+
 .opaque {
   position: fixed;
   background-color: black;
@@ -128,6 +155,7 @@ h5 {
 }
 
 .header-container {
+  position: absolute;
   height: 96px;
   width: auto;
   display: -webkit-box;
@@ -220,22 +248,46 @@ h5 {
 
 .create-playlist-form form [type="submit"] {
   margin: 20px 0 0 0;
-  background-color: #1f6feb;
+  background-color: #1c1c1c;
   color: #ffffff;
   padding: 20px;
-  border: none;
+  border: 2px solid white;
   border-radius: 30px;
+  -webkit-animation-name: create-playlist-hover;
+          animation-name: create-playlist-hover;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .create-playlist-form form [type="submit"]:hover {
-  background-color: #1258c5;
   cursor: pointer;
-  -webkit-transform: translateY(15px);
-          transform: translateY(15px);
-  -webkit-transition: -webkit-transform 0.6s ease-in-out;
-  transition: -webkit-transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  background-color: #1f6feb;
+  -webkit-transition: background-color 0.6s ease-in-out;
+  transition: background-color 0.6s ease-in-out;
+}
+
+@-webkit-keyframes create-playlist-hover {
+  0% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes create-playlist-hover {
+  0% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
 }
 
 #back-btn-container {
@@ -250,10 +302,202 @@ h5 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  z-index: 10;
 }
 
 #back-btn:hover {
   cursor: pointer;
   background-color: #4e4e4e;
+}
+
+#hero-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hero-border {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  position: absolute;
+  height: 82vh;
+  width: 82vw;
+  margin: -41vh 0 0 -41vw;
+  top: 50%;
+  left: 50%;
+  padding: 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero-border h2 {
+  color: white;
+  width: 50vw;
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
+
+.hero-border h3 {
+  color: #a6a6a6;
+  margin-top: 40px;
+}
+
+.hero-border .logo {
+  position: absolute;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  background-color: #1c1c1c;
+  max-width: 350px;
+  height: 90px;
+  padding: 0 3em 0 3em;
+  text-align: center;
+  -webkit-transform: translateX(0) translateY(-8.5em);
+          transform: translateX(0) translateY(-8.5em);
+}
+
+.hero-border .logo h1 {
+  -webkit-transform: translateY(-0.3em);
+          transform: translateY(-0.3em);
+}
+
+.buttons {
+  margin-top: 3em;
+}
+
+.button {
+  background-color: #1c1c1c;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 0 1em 0 0;
+}
+
+.button a {
+  padding: 0 40px 0 40px;
+}
+
+.sign-up-btn {
+  border: 1px solid #ffffff;
+}
+
+.sign-up-btn:hover {
+  background-color: #e8e8e8;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sign-up-btn:hover a {
+  color: black;
+}
+
+.quiz-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quiz-title .stats {
+  margin: 0 0 0 3em;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.quiz-title .stats .substat {
+  margin: 0 40px 0 0;
+}
+
+.more-btn a {
+  color: #228cfb;
+}
+
+.quiz-container h5 {
+  display: inline-block;
+}
+
+.quiz-container [type="submit"] {
+  margin-top: 20px;
+  padding: 20px 3em 20px 3em;
+  color: white;
+  background-color: #2b2b2b;
+  border: none;
+}
+
+.lost-container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.lost-container .lost {
+  height: 80vh;
+  width: 80vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -40vh 0 0 -40vw;
+}
+
+.lost-container .lost h2 {
+  text-align: center;
+}
+
+.lost-container #lost-img {
+  display: block;
+  margin: 0 auto 0 auto;
+  height: 500px;
+}
+
+form.create-quiz-form {
+  max-width: 500px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+}
+
+form.create-quiz-form label {
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
+form.create-quiz-form [type="text"] {
+  display: block;
+}
+
+form.create-quiz-form [type="submit"] {
+  border: none;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+form.create-quiz-form [type="submit"]:hover {
+  background-color: #ffffff;
+  color: #1c1c1c;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

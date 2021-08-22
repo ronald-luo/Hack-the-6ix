@@ -1,15 +1,40 @@
 <%- include('./partials/header') %>
+<%- include('./partials/user-tab') %>
 <%- include('./partials/sidebar') %>
 <%- include('./partials/back') %>
 <main>
-    <h1>Quiz</h1>
+    <div class="quiz-title">
+        <h1>Quiz</h1>
+        <div class="stats">
+            <div class="substat attempts">
+                <img src="https://s2.svgbox.net/octicons.svg?ic=person&color=fff" width="32" height="32">
+                <h5>3,032</h5>
+            </div>
+            <div class="substat likes">
+                <img src="https://s2.svgbox.net/octicons.svg?ic=heart&color=fff" width="32" height="32">
+                <h5>1,023</h5>
+            </div>
+            
+        </div>
+    </div>
+
     <h4>Try your best!</h4>
 
     <div class="quiz-container">
-        <h5>Question: Whats the biggest elephant on the planet</h5>
-        <fieldset>
+        <h5>Question: Whats the biggest elephant on the planet?</h5>
+        <form action="">
+            <input type="radio" name="question1" id="">
+            <h5>a. The brown spotted elephant</h5></input><br>
+            <input type="radio" name="question1" id="">
+            <h5>b. The Thai brown nose elephant</h5></input><br>
+            <input type="radio" name="question1" id="">
+            <h5>c. The African savanna elephant</h5></input><br>
+            <input type="radio" name="question1" id="">
+            <h5>d. The pale North American elephant</h5></input><br>
 
-        </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+
     </div>
 </main>
 

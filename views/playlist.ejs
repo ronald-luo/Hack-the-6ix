@@ -1,6 +1,21 @@
 <%- include('./partials/header') %>
+<%- include('./partials/user-tab') %>
 <%- include('./partials/sidebar') %>
 <%- include('./partials/back') %>
+
+<style>
+#glider-next0 {
+  position: absolute;
+  right: -50px;
+  top: 130px;
+}
+
+#glider-prev0 {
+  position: absolute;
+  left: -40px;
+  top: 130px;
+}
+</style>
 
 <main>
     <h1>The essence of linear algebra</h1>
@@ -12,9 +27,12 @@
 
     <div class="glider-contain multiple">
     
-        <h3>
-            Try out these quizzes
-        </h3>
+        <div class="playlist-title-container">
+            <h3>
+                Try out these quizzes
+            </h3>
+        <img id="create-quiz" src="https://s2.svgbox.net/octicons.svg?ic=plus&color=fff" width="32" height="32">
+        </div>
     
         <button class="glider-prev" id="glider-next0">
             <img src="https://s2.svgbox.net/octicons.svg?ic=chevron-left&color=fff" width="32" height="32">
@@ -58,6 +76,12 @@
                 next: '#glider-next0'
             }
         });
+</script>
+
+<script>
+    document.getElementById('create-quiz').addEventListener('click', () => {
+        window.location.href = '/create-quiz'
+    })
 </script>
 
 <%- include('./partials/footer') %>
