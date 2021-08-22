@@ -42,14 +42,14 @@ router.post('/create-playlist', async (req, res, next) => {
   const playlist = new Playlist({
     title: responses.data.items[0].snippet.title,
     channel: responses.data.items[0].channelTitle,
-    thumbnail: responses.data.items[0].snippet.thumbnails.default.url,
+    thumbnail: responses.data.items[0].snippet.thumbnails.default,
     playlistid: req.body.playlisturl,
     videoids: tempVideoIds,
   })
 
   db.collection('playlist').save(playlist)
 
-  res.render('dashboard')
+  res.redirect(`/playlist/${req.body.playlisturl}`)
 }
 catch (err) {
   console.log(err)
@@ -59,8 +59,12 @@ catch (err) {
 
 /* GET home page. */
 router.get('/dashboard', function(req, res, next) {
-  Playlist.find()
-  .then((result) => {
+    const db = mongoose.connection
+    db.collection('playlist')
+
+    Playlist.find()
+        .then((result) => {
+      console.log(result)
     res.render('dashboard', { playlists: result });
   })
   .catch(err => {
@@ -83,17 +87,21 @@ router.get('/playlist/:id', async (req, res, next) => {
     var videos = []
     const respond = await youtube.playlistItems.list({
       part:"snippet",
-      playlistId: 'PLi7hwCycaAzc-mBJIgveE5qEsPra9BBT1', ///this is to be replaced by a variable later that represents the ID of the playlist
+      playlistId: id, ///this is to be replaced by a variable later that represents the ID of the playlist
     })
 
     // console.log(respond)
-    // console.log(respond.data.items[0].snippet)
+    console.log(respond.data.items[0].snippet)
     // res.send(respond)
+    let titles = []
     for (let i = 0; i < respond.data.items.length; i++){
-      videos.push(respond.data.items[i].snippet.resourceId.videoId)
+        titles.push(respond.data.items[i].snippet.title)
+        videos.push(respond.data.items[i].snippet.resourceId.videoId)
     }
 
+    console.log()
     console.log(videos)
+    console.log(titles)
 
   
     ///turn video ids into embedded video url
@@ -109,7 +117,7 @@ router.get('/playlist/:id', async (req, res, next) => {
 
     console.log(embedded_vids)
 
-    res.render('playlist', {iframes: embedded_vids})
+    res.render('playlist', {iframes: embedded_vids, titles: titles, creator: respond.data.items[0].snippet.videoOwnerChannelTitle})
 
 });
 

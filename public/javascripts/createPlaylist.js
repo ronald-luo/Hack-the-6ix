@@ -5,9 +5,9 @@ document.querySelector('.create-playlist').addEventListener('click', () => {
     let opaque = document.createElement('div')
 
     container.innerHTML = `<form method="POST" action="/create-playlist">
-        <label for="playlist-url">Enter a playlist URL</label>
+        <label for="playlist-url">Enter a playlist ID</label>
         <img id="close-create" src="https://s2.svgbox.net/hero-outline.svg?ic=x&color=fff" width="32" height="32">
-        <input type="text" name="playlisturl" id="playlist-url" placeholder="https://www.youtube.com/playlist?list=PLi7hwCycaAzc-mBJIgveE5qEsPra9BBT1">
+        <input type="text" name="playlisturl" id="playlist-url" placeholder="PLi7hwCycaAzc-mBJIgveE5qEsPra9BBT1">
         <input type="submit" value="Submit">
     </form>`
 

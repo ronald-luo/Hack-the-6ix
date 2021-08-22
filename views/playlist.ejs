@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
 <%- include('./partials/user-tab') %>
-<%- include('./partials/sidebar') %>
+<%- include('./partials/playlist-sidebar') %>
 <%- include('./partials/back') %>
 
 <style>
@@ -18,8 +18,8 @@
 </style>
 
 <main>
-    <h1>The essence of linear algebra</h1>
-    <h4>ThreeBlueOneBrown</h4>
+    <h1><%=titles[0]%></h1>
+    <h4><%=creator%></h4>
 
     <div class="video-container">
 
@@ -95,8 +95,10 @@
 </script>
 
 <script>
-    const embedVideo = document.createElement('div')
-    embedVideo.innerH
+    const embedVideo = document.querySelector(".video-container")
+    embedVideo.classList.add('embed')
+    embedVideo.innerHTML = '<%-iframes[0].embedHtml%>'
+
 </script>
 
 <%- include('./partials/footer') %>

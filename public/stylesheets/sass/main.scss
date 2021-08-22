@@ -436,3 +436,30 @@ form.create-quiz-form {
     }
   }
 }
+.playlist-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color1;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  padding: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: scroll;
+
+  .video {
+    padding: $padding2;
+    align-self: flex-start;
+    justify-self: stretch;
+    width: 200px;
+  }
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}

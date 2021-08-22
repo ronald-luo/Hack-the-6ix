@@ -500,4 +500,41 @@ form.create-quiz-form [type="submit"]:hover {
   color: #1c1c1c;
   cursor: pointer;
 }
+
+.playlist-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2b2b2b;
+  height: 100%;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  z-index: 10;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.playlist-sidebar .video {
+  padding: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  width: 200px;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */

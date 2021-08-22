@@ -45,16 +45,18 @@ $padding0: 6em;
 
     img {
       object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
 
-    &:before {
-      content: "";
-      display: block;
-      background-color: darken($color0, 50%);
-      position: absolute;
-      width: 211px;
-      height: 80px;
-      opacity: 40%;
-    }
+    // &:before {
+    //   content: "";
+    //   display: block;
+    //   background-color: darken($color0, 50%);
+    //   position: absolute;
+    //   width: 211px;
+    //   height: 80px;
+    //   opacity: 40%;
+    // }
   }
 }
