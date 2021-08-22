@@ -1,0 +1,121 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2b2b2b;
+  height: 100%;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10;
+}
+
+nav li img.default {
+  margin: 10px 0 30px 0;
+}
+
+nav:hover {
+  background-color: #454545;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.nav li {
+  text-decoration: none;
+  width: 100%;
+  margin: 10px 0 30px 0;
+}
+
+.nav li a {
+  margin: 10px 0 10px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#228cfb), to(#1f6feb));
+  background: linear-gradient(to bottom, #228cfb 0%, #1f6feb 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 1px 2px;
+  color: #000;
+  text-decoration: none;
+  -webkit-transition: background-size 0.55s;
+  transition: background-size 0.55s;
+}
+
+.nav li a:hover {
+  background-size: 4px 50px;
+}
+
+.nav li img {
+  display: inline-block;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.nav li h5 {
+  display: inline-block;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  margin: 0 0 0 10px;
+}
+
+.nav.visible {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.nav-color0 {
+  background-color: black;
+  width: 60%;
+  max-width: 200px;
+  min-width: 140px;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.nav-color0.visible {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.nav-color1 {
+  background-color: #228cfb;
+  width: 95%;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.nav-color1.visible {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.nav-color2 {
+  background-color: #2b2b2b;
+  width: 95%;
+  padding: 30px;
+  position: relative;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.nav-color2.visible {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+/*# sourceMappingURL=nav.css.map */

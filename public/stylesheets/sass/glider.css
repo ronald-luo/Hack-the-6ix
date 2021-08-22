@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@300;400&family=Ruda&display=swap");
+.glider-contain {
+  width: auto;
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+.glider-next {
+  position: absolute;
+  right: -50px;
+  top: 95px;
+}
+
+.glider-prev {
+  position: absolute;
+  left: -40px;
+  top: 95px;
+}
+
+.glider .playlist-block {
+  width: 233px;
+  max-height: 131px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 10px 0 0;
+  border-radius: 10px;
+}
+
+.glider .playlist-block img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.glider .playlist-block:before {
+  content: "";
+  display: block;
+  background-color: black;
+  position: absolute;
+  width: 211px;
+  height: 80px;
+  opacity: 40%;
+}
+/*# sourceMappingURL=glider.css.map */

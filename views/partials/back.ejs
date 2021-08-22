@@ -1,0 +1,14 @@
+<script>
+    const userTab = document.querySelector('.user-tab')
+    const headerContainer = document.querySelector('.header-container')
+
+    const backInsert = document.createElement('div')
+    backInsert.innerHTML = `<img id="back-btn" src="https://s2.svgbox.net/octicons.svg?ic=chevron-left&color=fff" width="32" height="32">`
+    backInsert.setAttribute('id', 'back-btn-container')
+    
+    headerContainer.insertBefore(backInsert, userTab)
+
+        document.getElementById("back-btn").addEventListener('click', () => {
+                window.history.back()
+    })
+</script>

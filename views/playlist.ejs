@@ -1,0 +1,63 @@
+<%- include('./partials/header') %>
+<%- include('./partials/sidebar') %>
+<%- include('./partials/back') %>
+
+<main>
+    <h1>The essence of linear algebra</h1>
+    <h4>ThreeBlueOneBrown</h4>
+
+    <div class="video-container">
+
+    </div>
+
+    <div class="glider-contain multiple">
+    
+        <h3>
+            Try out these quizzes
+        </h3>
+    
+        <button class="glider-prev" id="glider-next0">
+            <img src="https://s2.svgbox.net/octicons.svg?ic=chevron-left&color=fff" width="32" height="32">
+        </button>
+    
+        <div class="glider0">
+            <div class="playlist-block"><img
+                    src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+                    alt=""></div>
+            <div class="playlist-block"><img
+                    src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+                    alt=""></div>
+            <div class="playlist-block"><img
+                    src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+                    alt=""></div>
+            <div class="playlist-block"><img
+                    src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+                    alt=""></div>
+            <div class="playlist-block"><img
+                    src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+                    alt=""></div>
+            <div class="playlist-block"><img
+                    src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+                    alt=""></div>
+        </div>
+    
+        <button class="glider-next" id="glider-next0">
+            <img src="https://s2.svgbox.net/octicons.svg?ic=chevron-right&color=fff" width="32" height="32">
+        </button>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script>
+    new Glider(document.querySelector('.glider0'), {
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            draggable: true,
+            arrows: {
+                prev: '#glider-prev0',
+                next: '#glider-next0'
+            }
+        });
+</script>
+
+<%- include('./partials/footer') %>

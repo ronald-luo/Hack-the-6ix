@@ -1,0 +1,24 @@
+
+<div id="cal-heatmap"></div>
+
+
+<script type="text/javascript">
+    var dt = new Date().toString().split(" ")
+    console.log(dt)
+    const _start = dt.slice(1, 3) + ",2020"
+    console.log(_start)
+
+
+    var cal = new CalHeatMap();
+    cal.init({
+        domain: "month",
+        tooltip: true,
+        start: new Date(),
+        data: "data.json",
+        legendColors: {
+            min: "#efefef",
+            max: "steelblue",
+            empty: "white"
+        }
+    });
+</script>

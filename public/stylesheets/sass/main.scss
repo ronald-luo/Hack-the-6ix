@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@300;400&family=Ruda&display=swap");
+
+$font2: "Roboto", sans-serif;
+$font1: "Roboto Slab", serif;
+$font0: "Ruda", sans-serif;
+
+$color6: #ffffff;
+$color5: #228cfb;
+$color4: #1f6feb;
+$color3: #5d5d5d;
+$color2: #414141;
+$color1: #2b2b2b;
+$color0: #1c1c1c;
+
+$padding2: 20px;
+$padding1: 40px;
+$padding0: 6em;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $color0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100vw;
+  padding: 0 $padding0 0 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-top: 100px;
+
+  h3 {
+    color: darken($color6, 40%);
+  }
+
+  h4 {
+    margin-top: 0.4em;
+    color: darken($color6, 30%);
+  }
+}
+
+h1 {
+  font-family: $font0;
+  font-size: 80px;
+  color: $color6;
+  margin: 0.2em 0 0.6em 0;
+}
+
+h2 {
+  font-family: $font1;
+  font-size: 48px;
+  color: $color6;
+  margin: 1em 0 1em 0;
+}
+
+label,
+h3 {
+  font-family: $font1;
+  font-size: 24px;
+  color: $color6;
+  margin: 1em 0 1em 0;
+}
+
+h4 {
+  font-family: $font2;
+  font-size: 24px;
+  font-weight: 400;
+  color: $color6;
+  margin: 1em 0 1em 0;
+}
+
+a,
+h5 {
+  font-family: $font2;
+  font-size: 18px;
+  font-weight: 300;
+  color: $color6;
+  margin: 1em 0 1em 0;
+  text-decoration: none;
+}
+
+.user-tab {
+  position: fixed;
+  right: $padding0;
+  top: 0;
+  max-width: 250px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: $color1;
+  padding: 0 $padding2 0 $padding2;
+  z-index: 10;
+
+  #search {
+    cursor: pointer;
+  }
+
+  .profile-pic {
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: $padding2;
+  }
+}
+
+.video-container {
+  height: 600px;
+  width: auto;
+  background-color: black;
+}
+
+.opaque {
+  position: fixed;
+  background-color: black;
+  opacity: 50%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
+
+.header-container {
+  height: 96px;
+  width: auto;
+  display: flex;
+  align-content: flex;
+}
+
+.create-playlist-form {
+  background-color: $color1;
+  width: 30vw;
+  height: 30vh;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 11;
+  margin: -15vh 0 0 -15vw;
+  border-radius: 15px;
+  padding: $padding2;
+  animation-name: form-down;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+
+  @keyframes form-down {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    label {
+      margin-top: 6px;
+      margin-bottom: 1.5em;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: $padding2;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    [type="text"] {
+      height: 30px;
+      text-indent: 1em;
+      outline: none;
+      margin-bottom: 10px;
+
+      &:hover {
+        outline: 2px solid $color5;
+      }
+    }
+
+    [type="submit"] {
+      margin: $padding2 0 0 0;
+      background-color: $color4;
+      color: $color6;
+      padding: $padding2;
+      border: none;
+      border-radius: 30px;
+
+      &:hover {
+        background-color: darken($color4, 10%);
+        cursor: pointer;
+        transform: translateY(15px);
+        transition: transform 0.6s ease-in-out;
+      }
+    }
+  }
+}
+
+#back-btn-container {
+  align-self: center;
+}
+
+#back-btn {
+  background-color: $color2;
+  border-radius: 50%;
+  align-self: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($color2, 5%);
+  }
+}
