@@ -1,0 +1,68 @@
+
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script>
+
+let container = document.createElement('div')
+let main = document.querySelector('main')
+
+
+for (let i = 0; i < 5; i++) {
+        let container = document.createElement('div')
+        container.innerHTML = `
+<div class="glider-contain multiple">
+<h3>
+    Learn
+</h3>
+
+<button class="glider-prev" id="glider-next${i}">
+    <img src="https://s2.svgbox.net/octicons.svg?ic=chevron-left&color=fff" width="32" height="32">
+</button>
+
+<div class="glider${i}">
+        <div class="playlist-block" id="joe"><img
+            src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+            alt=""></div>
+    <div class="playlist-block" id="while"><img
+            src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+            alt=""></div>
+    <div class="playlist-block" id="playa"><img
+            src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+            alt=""></div>
+    <div class="playlist-block" id="seal"><img
+            src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+            alt=""></div>
+    <div class="playlist-block" id="132"><img
+            src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg"
+            alt=""></div>
+            
+</div>
+
+<button class="glider-next" id="glider-next${i}">
+    <img src="https://s2.svgbox.net/octicons.svg?ic=chevron-right&color=fff" width="32" height="32">
+</button>
+</div>`
+        main.appendChild(container)
+
+
+        new Glider(document.querySelector(`.glider${i}`), {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                draggable: true,
+                arrows: {
+                prev: `#glider-prev${i}`,
+                next: `#glider-next${i}`
+                }
+        });             
+}
+
+const nodes = document.querySelectorAll('.playlist-block')
+
+nodes.forEach(node => {
+        let playlistId = node.getAttribute('id')
+
+        node.addEventListener('click', () => {
+                window.location.href = "/playlist/" + playlistId
+        })
+})
+
+</script>

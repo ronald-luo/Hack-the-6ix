@@ -7,7 +7,7 @@ document.querySelector('.create-playlist').addEventListener('click', () => {
     container.innerHTML = `<form method="POST" action="/create-playlist">
         <label for="playlist-url">Enter a playlist URL</label>
         <img id="close-create" src="https://s2.svgbox.net/hero-outline.svg?ic=x&color=fff" width="32" height="32">
-        <input type="text" name="playlist-url" id="playlist-url">
+        <input type="text" name="playlisturl" id="playlist-url" placeholder="https://www.youtube.com/playlist?list=PLi7hwCycaAzc-mBJIgveE5qEsPra9BBT1">
         <input type="submit" value="Submit">
     </form>`
 

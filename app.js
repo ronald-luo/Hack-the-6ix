@@ -3,9 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+var  { google } = require('googleapis');
+const youtube = google.youtube({
+  version: "v3",
+  auth: "AIzaSyAuDufoS-oL1jdo30epc7yA-wXoB_1yxrY",
+})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -38,8 +45,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3080, () => {
+const dbURI = 'mongodb+srv://admin:blackspacespamming@cluster0.yppub.mongodb.net/app?retryWrites=true&w=majority'
+mongoose.connect(dbURI, { useUnifiedTopology: true, useNewUrlParser: true })
+.then(() => {
+  console.log('connected to db')
+  app.listen(3080, () => {
     console.log('listening to 3080')
+  })
 })
+.catch((err) => {
+  console.log(err)
+})
+
 
 module.exports = app;

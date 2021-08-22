@@ -82,6 +82,21 @@
     document.getElementById('create-quiz').addEventListener('click', () => {
         window.location.href = '/create-quiz'
     })
+
+    const nodes = document.querySelectorAll('.playlist-block')
+
+    nodes.forEach(node => {
+        let quizId = node.getAttribute('id')
+
+        node.addEventListener('click', () => {
+                window.location.href = "/quiz/" + quizId
+    })
+})
+</script>
+
+<script>
+    const embedVideo = document.createElement('div')
+    embedVideo.innerH
 </script>
 
 <%- include('./partials/footer') %>
